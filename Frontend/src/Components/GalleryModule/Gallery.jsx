@@ -114,7 +114,7 @@ const Gallery = () => {
 
       const delta = e.deltaY;
       const maxScroll = 250;
-      const maxContentScroll = 120;
+      const maxContentScroll = window.innerWidth <= 700 ? 55 : 120;
       const scrollArea = scrollAreaRef.current;
 
       if (!navbarRef.current || !contentWrapperRef.current || !scrollArea) return;
