@@ -35,14 +35,18 @@
     transition: border 0.2s ease;
 }
 
-:global(.dark-theme) .input {
-    background: #ADADAD47 !important;
-}
-
 .input,
 .input:focus,
 .input:active {
     background: #E2E8FF;
+    color: #333333;
+}
+
+:global(.dark-theme) .input,
+:global(.dark-theme) .input:focus,
+:global(.dark-theme) .input:active {
+    background: #ADADAD47 !important;
+    color: #A9A9A9 !important;
 }
 
 .textarea {
@@ -118,6 +122,11 @@
     color: #A9A9A9 !important;
 }
 
+:global(.dark-theme) .input option {
+    background-color: #121212cc !important;
+    color: #A9A9A9;
+}
+
 .submitRow {
     width: 100%;
     display: flex;
@@ -146,7 +155,6 @@
     border-radius: 4px;
     margin: 0;
     box-sizing: border-box;
-
 }
 
 .previewFormContainer {

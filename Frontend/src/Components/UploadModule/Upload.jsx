@@ -226,7 +226,6 @@ const Upload = () => {
                     </div>
                   </div>
 
-
                   <div className={Styles.field}>
                     {errors.device && (
                       <div className={Styles.error}>
