@@ -123,8 +123,25 @@
 }
 
 :global(.dark-theme) .input option {
-    background-color: #373737; 
+    background-color: #373737;
     color: white;
+}
+
+/* Cross-browser select + option styling for dark theme. */
+:global(.dark-theme) select.input,
+:global(.dark-theme) select.input:focus,
+:global(.dark-theme) select.input:active {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #373737 !important;
+    color: #ffffff !important;
+    color-scheme: dark;
+}
+
+:global(.dark-theme) select.input option {
+    background-color: #373737;
+    color: #ffffff;
 }
 
 .submitRow {
@@ -262,6 +279,23 @@ input[type="checkbox"].checkboxError:not(:checked) {
 
 .container::-webkit-scrollbar {
     display: none;
+}
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    .uploadBox::before {
+        background: rgba(255, 255, 255, 0.92);
+    }
+
+    :global(.dark-theme) .uploadBox::before {
+        background: rgba(39, 39, 39, 0.82);
+    }
+
+    .uploadBtn,
+    .error,
+    .submitRow input[type="checkbox"],
+    .fieldwallpaper .input {
+        backdrop-filter: none;
+    }
 }
 
 
